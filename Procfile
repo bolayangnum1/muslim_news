@@ -1,0 +1,1 @@
+web: gunicorn muslim_road.wsgi --log-file -
