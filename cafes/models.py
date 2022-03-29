@@ -17,7 +17,7 @@ class BaseAbstractCategory(models.Model):
     mosqueRoom = models.BooleanField(verbose_name="Намазкана есть/нет", default=True)
     contacts = models.CharField(verbose_name="Контакты", max_length=16)
     address = models.CharField(verbose_name="Адресс", max_length=500)
-    images = models.ImageField(verbose_name="Фотографии")
+    images = models.ImageField(verbose_name="Фотографии", upload_to=None)
     longitude = models.DecimalField(verbose_name='Долгота', decimal_places=100, max_digits=1000)
     latitude = models.DecimalField(verbose_name='Широта', decimal_places=100, max_digits=1000)
 
@@ -62,6 +62,6 @@ class FastFood(BaseAbstractCategory):
 
     name = models.CharField(verbose_name="Название фаст-фуд", max_length=300)
     workTime = models.CharField(verbose_name="Режим работы от/до", max_length=200)
-    site = models.CharField(verbose_name="Сайт", max_length=100)
+    site = models.URLField(verbose_name="Сайт", max_length=100)
     longitude = models.DecimalField(verbose_name='Долгота', decimal_places=000, max_digits=1000)
     latitude = models.DecimalField(verbose_name='Широта', decimal_places=100, max_digits=1000)

@@ -3,27 +3,14 @@ from django.urls import path, include
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
-
-schema_view = get_schema_view(
-   openapi.Info(
-      title="Snippets API",
-      default_version='v1',
-      description="Temir Backend API",
-      terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="contact@snippets.local"),
-      license=openapi.License(name="BSD License"),
-   ),
-   public=True,
-   permission_classes=(permissions.AllowAny,),
-)
-
+from .yasg import urlpatterns as doc_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('vacancy/v1/', include('vacancies.urls')),
-    path('lesson/v1/', include('lessons.urls')),
-    path('address/v1/', include('addresses.urls')),
-    path('cafe/v1/', include('cafes.urls')),
-    path('time/v1/', include('times.urls')),
-    path('swagger/', schema_view.with_ui('swagger'), name='schema-swagger-ui'),
+    path('', include('vacancies.urls')),
+    path('', include('lessons.urls')),
+    path('', include('addresses.urls')),
+    path('', include('cafes.urls')),
+    path('', include('times.urls')),
 ]
+urlpatterns += doc_urls
