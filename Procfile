@@ -1,1 +1,1 @@
-web: gunicorn muslimRoad.wsgi --log-file -
+web: gunicorn muslim_road.wsgi --log-file -
