@@ -4,7 +4,7 @@ from rest_framework import generics
 
 
 class CafeCreateView(generics.CreateAPIView):
-    queryset = Cafe.objects.all()
+    queryset = Cafe.objects.filter(is_published=True)
     serializer_class = CafesSerializer
 
 

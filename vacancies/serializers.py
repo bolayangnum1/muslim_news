@@ -11,6 +11,11 @@ class VacanciesSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class RegistrationSerializer(serializers.Serializer):
+
+    class Meta:
+        model = Registration
+        fields = '__all__'
 # class CreateVacanciesSerializer(serializers.Serializer):
 #     name = serializers.CharField(max_length=100, required=True)
 #     company = serializers.CharField(max_length=200, required=True)
@@ -18,10 +23,3 @@ class VacanciesSerializer(serializers.ModelSerializer):
 #     salary = serializers.IntegerField(required=True)
 #     duties = serializers.CharField(max_length=2000, required=True)
 #     conditions = serializers.CharField(max_length=2000, required=True)
-
-
-class RegistrationSerializer(serializers.Serializer):
-
-    class Meta:
-        model = Registration
-        fields = '__all__'
