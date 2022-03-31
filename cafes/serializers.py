@@ -5,7 +5,6 @@ from .models import *
 class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
-        ref_name = "Cafe category serializer"
         model = Category
         fields = '__all__'
 
@@ -14,14 +13,14 @@ class CafesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Cafe
-        fields = '__all__'
+        fields = ('name', 'certificate', 'mosqueroom', 'contacts', 'address', 'images', 'longitude', 'latitude', 'category')
 
 
 class RestaurantSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Restaurant
-        fields = '__all__'
+        fields = ('name', 'bighall', 'certificate', 'mosqueroom', 'contacts', 'address', 'images', 'longitude', 'latitude', 'category')
 
 
 class MagazineSerializer(serializers.ModelSerializer):

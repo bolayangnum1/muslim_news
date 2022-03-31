@@ -16,7 +16,7 @@ class Cafe(models.Model):
 
     name = models.CharField(verbose_name="Название кафе", max_length=300)
     certificate = models.BooleanField(verbose_name="Сертификат халал присутствует", default=True)
-    mosqueRoom = models.BooleanField(verbose_name="Намазкана есть/нет", default=True)
+    mosqueroom = models.BooleanField(verbose_name="Намазкана есть/нет", default=True)
     contacts = models.CharField(verbose_name="Контакты", max_length=16)
     address = models.CharField(verbose_name="Адресс", max_length=500)
     images = models.ImageField(verbose_name="Фотографии")
@@ -34,9 +34,9 @@ class Restaurant(models.Model):
         verbose_name_plural = "Рестораны"
 
     name = models.CharField(verbose_name="Название ресторана", max_length=300)
-    bigHall = models.IntegerField(verbose_name="Банкетный зал на сколько человек?", default=80)
+    bighall = models.IntegerField(verbose_name="Банкетный зал на сколько человек?", default=80)
     certificate = models.BooleanField(verbose_name="Сертификат халал присутствует", default=True)
-    mosqueRoom = models.BooleanField(verbose_name="Намазкана есть/нет", default=True)
+    mosqueroom = models.BooleanField(verbose_name="Намазкана есть/нет", default=True)
     contacts = models.CharField(verbose_name="Контакты", max_length=16)
     address = models.CharField(verbose_name="Адресс", max_length=500)
     images = models.ImageField(verbose_name="Фотографии", upload_to=None)
@@ -57,9 +57,9 @@ class Magazine(models.Model):
     site = models.CharField(verbose_name="Сайт магазина/гипермаркета", max_length=100)
     alcohol = models.BooleanField(verbose_name="Спритное продается да/нет", default=False)
     productsCertificate = models.BooleanField(verbose_name="Продукты халалные  есть/нет", default=True)
-    workTime = models.CharField(verbose_name="Режим работы от/до", max_length=200)
+    worktime = models.CharField(verbose_name="Режим работы от/до", max_length=200)
     certificate = models.BooleanField(verbose_name="Сертификат халал присутствует", default=True)
-    mosqueRoom = models.BooleanField(verbose_name="Намазкана есть/нет", default=True)
+    mosqueroom = models.BooleanField(verbose_name="Намазкана есть/нет", default=True)
     contacts = models.CharField(verbose_name="Контакты", max_length=16)
     address = models.CharField(verbose_name="Адресс", max_length=500)
     images = models.ImageField(verbose_name="Фотографии", upload_to=None)
@@ -77,10 +77,10 @@ class FastFood(models.Model):
         verbose_name_plural = "Фаст Фуды"
 
     name = models.CharField(verbose_name="Название фаст-фуд", max_length=300)
-    workTime = models.CharField(verbose_name="Режим работы от/до", max_length=200)
+    worktime = models.CharField(verbose_name="Режим работы от/до", max_length=200)
     site = models.URLField(verbose_name="Сайт", max_length=100)
     certificate = models.BooleanField(verbose_name="Сертификат халал присутствует", default=True)
-    mosqueRoom = models.BooleanField(verbose_name="Намазкана есть/нет", default=True)
+    mosqueroom = models.BooleanField(verbose_name="Намазкана есть/нет", default=True)
     contacts = models.CharField(verbose_name="Контакты", max_length=16)
     address = models.CharField(verbose_name="Адресс", max_length=500)
     images = models.ImageField(verbose_name="Фотографии", upload_to=None)
