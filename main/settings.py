@@ -52,7 +52,7 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }
 
-ROOT_URLCONF = 'muslim_road.urls'
+ROOT_URLCONF = 'main.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'muslim_road.wsgi.application'
+WSGI_APPLICATION = 'main.wsgi.application'
 
 
 # DATABASES = {
@@ -127,4 +127,3 @@ STATIC_ROOT = BASE_DIR / "static"
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
