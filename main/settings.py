@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from decouple import config
+import django_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -129,3 +130,4 @@ STATIC_ROOT = BASE_DIR / "static"
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+django_heroku.settings(locals())
