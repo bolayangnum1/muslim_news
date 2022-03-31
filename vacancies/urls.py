@@ -3,17 +3,14 @@ from .views import VacanciesViewSet, RegistrationList, RegistrationDetail, Regis
     VacanciesDelete, VacanciesDetail, VacanciesCreate, VacanciesUpdate, VacanciesList
 
 urlpatterns = [
-    # path('vacancies/', VacanciesViewSet.as_view({'get': 'list', 'post': 'create'})),
-    # path('vacancy/<int:id>/', VacanciesViewSet.as_view({'get': 'retrieve'})),
+    path('registration-create/', RegistrationCreate.as_view()),
+    path('registration-list/', RegistrationList.as_view()),
+    path('registration-detail/<int:pk>/', RegistrationDetail.as_view()),
+    path('registration-delete-update/<int:pk>/', RegistrationUpdateDelete.as_view()),
 
-    path('registration/', RegistrationCreate.as_view()),
-    path('registration/', RegistrationList.as_view()),
-    path('registration/<int:pk>/', RegistrationDetail.as_view()),
-    path('registration/<int:pk>/', RegistrationUpdateDelete.as_view()),
-
-    path('vacancies/', VacanciesCreate.as_view()),
-    path('vacancies/', VacanciesList.as_view()),
-    path('vacancies/<int:pk>/', VacanciesUpdate.as_view()),
-    path('vacancies/<int:pk>/', VacanciesDelete.as_view()),
-    path('vacancies/<int:pk>/', VacanciesDetail.as_view())
+    path('vacancies-create/', VacanciesCreate.as_view()),
+    path('vacancies-list/', VacanciesList.as_view()),
+    path('vacancies-update/<int:pk>/', VacanciesUpdate.as_view()),
+    path('vacancies-delete/<int:pk>/', VacanciesDelete.as_view()),
+    path('vacancies-detail/<int:pk>/', VacanciesDetail.as_view())
 ]

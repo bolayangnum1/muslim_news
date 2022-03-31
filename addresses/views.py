@@ -47,6 +47,7 @@ class MosqueUniversityMVC(ModelViewSet):
     lookup_field = 'id'
 
 
+
 class MosqueLibraryMVC(ModelViewSet):
     queryset = MosqueLibrary.objects.all()
     serializer_class = MosqueLibrarySerializer

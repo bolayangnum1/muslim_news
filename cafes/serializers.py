@@ -2,41 +2,37 @@ from rest_framework import serializers
 from .models import *
 
 
-
-abstractFields = ('id', 'name', 'certificate', 'mosqueRoom', 'contacts', 'address', 'images')
-
-
 class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         ref_name = "Cafe category serializer"
         model = Category
-        fields = ('id', 'name')
+        fields = '__all__'
 
 
 class CafesSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = MosqueCafe
-        fields = abstractFields
+        model = Cafe
+        fields = '__all__'
 
 
 class RestaurantSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Restaurant
-        fields = (*abstractFields, 'bigHall')
+        fields = '__all__'
 
 
 class MagazineSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Magazine
-        fields = (*abstractFields, 'site', 'alcohol', 'productsCertificate', 'site')
+        fields = '__all__'
 
 
 class FastFoodSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = FastFood
-        fields = (*abstractFields, 'workTime', 'site')
+        fields = '__all__'

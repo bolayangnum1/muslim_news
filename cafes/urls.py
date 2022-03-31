@@ -1,31 +1,34 @@
 from django.urls import path
-from .views import CategoryMVC, CafesMVC, RestaurantMVC, MagazineMVC, FastFoodMVC, MosqueCafeDetailView, MosqueCafeListView, MosqueCafeCreateView, MosqueCafeUpdateView, MosqueCafeDeleteView
+from .views import CafeCreateView, CafeListView, CafeDeleteView, CafeUpdateView, CafeDetailView,\
+    RestaurantCreateView, RestaurantDeleteView, RestaurantListView, RestaurantUpdateView, RestaurantDetailView,\
+    MagazineCreateView, MagazineDeleteView, MagazineDetailView, MagazineUpdateView, MagazinListView,\
+    FastFoodDeleteView, FastFoodDetailView, FastFoodCreateView, FastFoodUpdateView, FastFoodListView
 
-plural = {
-    'get': 'list',
-    'post': 'create'
-}
-
-single = {
-    'get': 'retrieve',
-    'delete': 'destroy'
-}
 
 urlpatterns = [
-    path('categories/', CategoryMVC.as_view(plural)),
-    path('categories/<int:id>/', CategoryMVC.as_view(single)),
-    path('cafes/', CafesMVC.as_view(plural)),
-    path('cafes/<int:id>/', CafesMVC.as_view(single)),
-    path('restaurants/', RestaurantMVC.as_view(plural)),
-    path('restaurants/<int:id>/', RestaurantMVC.as_view(single)),
-    path('magazines/', MagazineMVC.as_view(plural)),
-    path('magazines/<int:id>/', MagazineMVC.as_view(single)),
-    path('fastfoods/', FastFoodMVC.as_view(plural)),
-    path('fastfoods/<int:id>/', FastFoodMVC.as_view(single)),
+    path('magazine-create/', MagazineCreateView.as_view()),
+    path('magazine-list/', MagazinListView.as_view()),
+    path('magazine-detail/<int:pk>/', MagazineDetailView.as_view()),
+    path('magazine-update/<int:pk>/', MagazineUpdateView.as_view()),
+    path('magazine-delete/<int:pk>/', MagazineDeleteView.as_view()),
 
-    path('mosquecafe-detail/<int:pk>/', MosqueCafeDetailView.as_view()),
-    path('mosquecafe-update/<int:pk>/', MosqueCafeUpdateView.as_view()),
-    path('mosquecafe-delete/<int:pk>/', MosqueCafeDeleteView.as_view()),
-    path('mosquecafe-create/', MosqueCafeCreateView.as_view()),
-    path('mosquecafe-list/', MosqueCafeListView.as_view()),
+
+    path('cafe-update/<int:pk>/', CafeUpdateView.as_view()),
+    path('cafe-delete/<int:pk>/', CafeDeleteView.as_view()),
+    path('cafe-detail/<int:pk>/', CafeDetailView.as_view()),
+    path('cafe-create/', CafeCreateView.as_view()),
+    path('cafe-list/', CafeListView.as_view()),
+
+    path('restaurant-create/', RestaurantCreateView.as_view()),
+    path('restaurant-detail/<int:pk>/', RestaurantDetailView.as_view()),
+    path('restaurant-update/<int:pk>/', RestaurantUpdateView.as_view()),
+    path('restaurant-delete/<int:pk>/', RestaurantDeleteView.as_view()),
+    path('restaurant-list/', RestaurantListView.as_view()),
+
+    path('fastfood-create/', FastFoodCreateView.as_view()),
+    path('fastfood-list/', FastFoodListView.as_view()),
+    path('fastfood-update/<int:pk>/', FastFoodUpdateView.as_view()),
+    path('fastfood-detail/<int:pk>/', FastFoodDetailView.as_view()),
+    path('fastfood-delete/<int:pk>/', FastFoodDeleteView.as_view()),
 ]
+

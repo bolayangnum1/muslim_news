@@ -1,64 +1,103 @@
-from django.shortcuts import render
-from rest_framework.viewsets import ModelViewSet
-from .serializers import CategorySerializer, CafesSerializer, RestaurantSerializer, MagazineSerializer, FastFoodSerializer
-from .models import Category, MosqueCafe, Restaurant, Magazine, FastFood
+from .serializers import CafesSerializer, RestaurantSerializer, MagazineSerializer, FastFoodSerializer
+from .models import Cafe, Restaurant, Magazine, FastFood
 from rest_framework import generics
 
-class CategoryMVC(ModelViewSet):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
-    lookup_field = 'id'
 
-
-class CafesMVC(ModelViewSet):
-    queryset = MosqueCafe.objects.all()
+class CafeCreateView(generics.CreateAPIView):
+    queryset = Cafe.objects.all()
     serializer_class = CafesSerializer
-    lookup_field = 'id'
 
 
-class RestaurantMVC(ModelViewSet):
+class CafeListView(generics.ListAPIView):
+    queryset = Cafe.objects.all()
+    serializer_class = CafesSerializer
+
+
+class CafeDeleteView(generics.DestroyAPIView):
+    queryset = Cafe.objects.all()
+    serializer_class = CafesSerializer
+
+
+class CafeUpdateView(generics.UpdateAPIView):
+    queryset = Cafe.objects.all()
+    serializer_class = CafesSerializer
+
+
+class CafeDetailView(generics.RetrieveAPIView):
+    queryset = Cafe.objects.all()
+    serializer_class = CafesSerializer
+
+
+class RestaurantCreateView(generics.CreateAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
-    lookup_field = 'id'
 
 
-class MagazineMVC(ModelViewSet):
+class RestaurantDetailView(generics.RetrieveAPIView):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer
+
+
+class RestaurantListView(generics.ListAPIView):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer
+
+
+class RestaurantUpdateView(generics.UpdateAPIView):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer
+
+
+class RestaurantDeleteView(generics.DestroyAPIView):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer
+
+
+class MagazineCreateView(generics.CreateAPIView):
     queryset = Magazine.objects.all()
     serializer_class = MagazineSerializer
-    lookup_field = 'id'
 
 
-class FastFoodMVC(ModelViewSet):
+class MagazinListView(generics.ListAPIView):
+    queryset = Magazine.objects.all()
+    serializer_class = MagazineSerializer
+
+
+class MagazineUpdateView(generics.UpdateAPIView):
+    queryset = Magazine.objects.all()
+    serializer_class = MagazineSerializer
+
+
+class MagazineDeleteView(generics.DestroyAPIView):
+    queryset = Magazine.objects.all()
+    serializer_class = MagazineSerializer
+
+
+class MagazineDetailView(generics.RetrieveAPIView):
+    queryset = Magazine.objects.all()
+    serializer_class = MagazineSerializer
+
+
+class FastFoodCreateView(generics.CreateAPIView):
     queryset = FastFood.objects.all()
     serializer_class = FastFoodSerializer
-    lookup_field = 'id'
 
 
-class MosqueCafeCreateView(generics.CreateAPIView):
-    queryset = MosqueCafe.objects.all()
-    serializer_class = CafesSerializer
-    lookup_field = 'id'
+class FastFoodListView(generics.ListAPIView):
+    queryset = FastFood.objects.all()
+    serializer_class = FastFoodSerializer
 
 
-class MosqueCafeListView(generics.ListAPIView):
-    queryset = MosqueCafe.objects.all()
-    serializer_class = CafesSerializer
-    lookup_field = 'id'
+class FastFoodUpdateView(generics.UpdateAPIView):
+    queryset = FastFood.objects.all()
+    serializer_class = FastFoodSerializer
 
 
-class MosqueCafeDeleteView(generics.DestroyAPIView):
-    queryset = MosqueCafe.objects.all()
-    serializer_class = CafesSerializer
-    lookup_field = 'id'
+class FastFoodDeleteView(generics.DestroyAPIView):
+    queryset = FastFood.objects.all()
+    serializer_class = FastFoodSerializer
 
 
-class MosqueCafeUpdateView(generics.UpdateAPIView):
-    queryset = MosqueCafe.objects.all()
-    serializer_class = CafesSerializer
-    lookup_field = 'id'
-
-
-class MosqueCafeDetailView(generics.RetrieveAPIView):
-    queryset = MosqueCafe.objects.all()
-    serializer_class = CafesSerializer
-    lookup_field = 'id'
+class FastFoodDetailView(generics.RetrieveAPIView):
+    queryset = FastFood.objects.all()
+    serializer_class = FastFoodSerializer
