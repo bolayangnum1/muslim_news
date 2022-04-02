@@ -14,6 +14,9 @@ class Category(models.Model):
 
     name = models.CharField(verbose_name="Название категории", max_length=200)
 
+    def __str__(self):
+        return self.name
+
 
 class BaseAbstractCategory(models.Model):
     class Meta:
@@ -34,6 +37,9 @@ class Mosque(BaseAbstractCategory):
 
     name = models.CharField(verbose_name="Имя мечети", max_length=500)
 
+    def __str__(self):
+        return self.name
+
 
 class MosqueRoom(BaseAbstractCategory):
     class Meta:
@@ -43,6 +49,9 @@ class MosqueRoom(BaseAbstractCategory):
     name = models.CharField(verbose_name="Имя молельной комнаты", max_length=500)
     gender = models.IntegerField(verbose_name="Пол", choices=GENDER_CHOICES)
 
+    def __str__(self):
+        return self.name
+
 
 class MosqueCollege(BaseAbstractCategory):
     class Meta:
@@ -50,6 +59,9 @@ class MosqueCollege(BaseAbstractCategory):
         verbose_name_plural = "Исламские колледжи"
 
     name = models.CharField(verbose_name="Имя колледжа", max_length=500)
+
+    def __str__(self):
+        return self.name
 
 
 class MosqueUniversity(BaseAbstractCategory):
@@ -59,6 +71,9 @@ class MosqueUniversity(BaseAbstractCategory):
 
     name = models.CharField(verbose_name="Имя университета", max_length=500)
 
+    def __str__(self):
+        return self.name
+
 
 class Madrasah(BaseAbstractCategory):
     class Meta:
@@ -66,6 +81,9 @@ class Madrasah(BaseAbstractCategory):
         verbose_name_plural = "Медресе"
 
     name = models.CharField(verbose_name="Имя медресе", max_length=500, null=True)
+
+    def __str__(self):
+        return self.name
 
 
 class MosqueLibrary(BaseAbstractCategory):
@@ -75,3 +93,6 @@ class MosqueLibrary(BaseAbstractCategory):
 
     name = models.CharField(verbose_name="Имя библиотеки", max_length=500)
     work_time = models.TimeField(verbose_name="Время работы")
+
+    def __str__(self):
+        return self.name

@@ -8,6 +8,9 @@ class Category(models.Model):
 
     name = models.CharField(verbose_name="Название категории", max_length=100)
 
+    def __str__(self):
+        return self.name
+
 
 class Cafe(models.Model):
     class Meta:
@@ -23,7 +26,7 @@ class Cafe(models.Model):
     longitude = models.DecimalField(verbose_name='Долгота', decimal_places=100, max_digits=1000)
     latitude = models.DecimalField(verbose_name='Широта', decimal_places=100, max_digits=1000)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
-    is_published = models.BooleanField(default=False)
+    is_published = models.BooleanField(default=False, verbose_name='активном состоянии')
 
     def __str__(self):
         return self.name
@@ -44,6 +47,7 @@ class Restaurant(models.Model):
     longitude = models.DecimalField(verbose_name='Долгота', decimal_places=100, max_digits=1000)
     latitude = models.DecimalField(verbose_name='Широта', decimal_places=100, max_digits=1000)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
+    is_published = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
@@ -67,6 +71,7 @@ class Magazine(models.Model):
     longitude = models.DecimalField(verbose_name='Долгота', decimal_places=100, max_digits=1000)
     latitude = models.DecimalField(verbose_name='Широта', decimal_places=100, max_digits=1000)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
+    is_published = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
@@ -88,6 +93,7 @@ class FastFood(models.Model):
     longitude = models.DecimalField(verbose_name='Долгота', decimal_places=100, max_digits=1000)
     latitude = models.DecimalField(verbose_name='Широта', decimal_places=100, max_digits=1000)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
+    is_published = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
