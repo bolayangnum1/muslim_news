@@ -2,7 +2,8 @@ from django.urls import path
 from .views import CafeCreateView, CafeListView, CafeDeleteView, CafeUpdateView, CafeDetailView,\
     RestaurantCreateView, RestaurantDeleteView, RestaurantListView, RestaurantUpdateView, RestaurantDetailView,\
     MagazineCreateView, MagazineDeleteView, MagazineDetailView, MagazineUpdateView, MagazinListView,\
-    FastFoodDeleteView, FastFoodDetailView, FastFoodCreateView, FastFoodUpdateView, FastFoodListView
+    FastFoodDeleteView, FastFoodDetailView, FastFoodCreateView, FastFoodUpdateView, FastFoodListView,\
+    CategoryCreateView, CategoryDeleteView, CategoryListView, CategoryUpdateView, CategoryDetailView
 
 
 urlpatterns = [
@@ -30,5 +31,12 @@ urlpatterns = [
     path('fastfood-update/<int:pk>/', FastFoodUpdateView.as_view()),
     path('fastfood-detail/<int:pk>/', FastFoodDetailView.as_view()),
     path('fastfood-delete/<int:pk>/', FastFoodDeleteView.as_view()),
+
+    path('category-create', CategoryCreateView.as_view()),
+    path('category-list', CategoryListView.as_view()),
+    path('category-detail', CategoryDetailView.as_view()),
+    path('category-update', CategoryUpdateView.as_view()),
+    path('category-delete', CategoryDeleteView.as_view()),
 ]
+
 
