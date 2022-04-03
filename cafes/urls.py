@@ -2,10 +2,9 @@ from django.urls import path
 from .views import CafeCreateView, CafeListView, CafeDeleteView, CafeUpdateView, CafeDetailView,\
     RestaurantCreateView, RestaurantDeleteView, RestaurantListView, RestaurantUpdateView, RestaurantDetailView,\
     MagazineCreateView, MagazineDeleteView, MagazineDetailView, MagazineUpdateView, MagazinListView,\
-    FastFoodDeleteView, FastFoodDetailView, FastFoodCreateView, FastFoodUpdateView, FastFoodListView,\
-    CategoryCreateView, CategoryDeleteView, CategoryListView, CategoryUpdateView, CategoryDetailView
+    FastFoodDeleteView, FastFoodDetailView, FastFoodCreateView, FastFoodUpdateView, FastFoodListView
 
-#Bolot
+
 urlpatterns = [
     path('magazine-create/', MagazineCreateView.as_view()),
     path('magazine-list/', MagazinListView.as_view()),
@@ -31,12 +30,6 @@ urlpatterns = [
     path('fastfood-update/<int:pk>/', FastFoodUpdateView.as_view()),
     path('fastfood-detail/<int:pk>/', FastFoodDetailView.as_view()),
     path('fastfood-delete/<int:pk>/', FastFoodDeleteView.as_view()),
-
-    path('category-create', CategoryCreateView.as_view()),
-    path('category-list', CategoryListView.as_view()),
-    path('category-detail/<int:pk>/', CategoryDetailView.as_view()),
-    path('category-update/<int:pk>/', CategoryUpdateView.as_view()),
-    path('category-delete/<int:pk>/', CategoryDeleteView.as_view()),
 ]
 
 

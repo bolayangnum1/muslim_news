@@ -1,17 +1,6 @@
 from django.db import models
 
 
-class Category(models.Model):
-    class Meta:
-        verbose_name = "Категория"
-        verbose_name_plural = "Категории"
-
-    name = models.CharField(verbose_name="Название категории", max_length=100)
-
-    def __str__(self):
-        return self.name
-
-
 class Cafe(models.Model):
     class Meta:
         verbose_name = "Кафе"
@@ -25,7 +14,6 @@ class Cafe(models.Model):
     images = models.ImageField(verbose_name="Фотографии")
     longitude = models.DecimalField(verbose_name='Долгота', decimal_places=100, max_digits=1000)
     latitude = models.DecimalField(verbose_name='Широта', decimal_places=100, max_digits=1000)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', related_name='categorycafe')
     is_published = models.BooleanField(default=False, verbose_name='активировать')
 
     def __str__(self):
@@ -46,7 +34,6 @@ class Restaurant(models.Model):
     images = models.ImageField(verbose_name="Фотографии", upload_to=None)
     longitude = models.DecimalField(verbose_name='Долгота', decimal_places=100, max_digits=1000)
     latitude = models.DecimalField(verbose_name='Широта', decimal_places=100, max_digits=1000)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', related_name='categoryrestarant')
     is_published = models.BooleanField(default=False, verbose_name='активировать')
 
     def __str__(self):
@@ -70,7 +57,6 @@ class Magazine(models.Model):
     images = models.ImageField(verbose_name="Фотографии", upload_to=None)
     longitude = models.DecimalField(verbose_name='Долгота', decimal_places=100, max_digits=1000)
     latitude = models.DecimalField(verbose_name='Широта', decimal_places=100, max_digits=1000)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', related_name='categorymagazine')
     is_published = models.BooleanField(default=False, verbose_name='активировать')
 
     def __str__(self):
@@ -92,7 +78,6 @@ class FastFood(models.Model):
     images = models.ImageField(verbose_name="Фотографии", upload_to=None)
     longitude = models.DecimalField(verbose_name='Долгота', decimal_places=100, max_digits=1000)
     latitude = models.DecimalField(verbose_name='Широта', decimal_places=100, max_digits=1000)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', related_name='categoryfastfoot')
     is_published = models.BooleanField(default=False, verbose_name='активировать')
 
     def __str__(self):

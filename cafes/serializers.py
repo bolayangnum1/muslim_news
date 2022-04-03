@@ -28,15 +28,3 @@ class FastFoodSerializer(serializers.ModelSerializer):
     class Meta:
         model = FastFood
         fields = '__all__'
-
-
-class CategorySerializer(serializers.ModelSerializer):
-    categorycafe = CafesSerializer(many=True)
-    categoryfastfoot = FastFoodSerializer(many=True)
-    categorymagazine = MagazineSerializer(many=True)
-    categoryrestarant = RestaurantSerializer(many=True)
-
-    class Meta:
-        model = Category
-        fields = '__all__'
-

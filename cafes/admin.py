@@ -1,17 +1,11 @@
 from django.contrib import admin
-from .models import Category, Cafe, Restaurant, Magazine, FastFood
+from .models import Cafe, Restaurant, Magazine, FastFood
 
 
-restaurantfields = ['name', 'bighall', 'certificate', 'mosqueroom', 'address', 'category', 'is_published']
-cafefields = ['name', 'certificate', 'mosqueroom', 'address', 'category', 'is_published']
-magazinefields = ['name', 'alcohol', 'productsCertificate', 'worktime', 'certificate', 'mosqueroom', 'address', 'category', 'is_published']
-fastfoodfields = ['name', 'worktime', 'certificate', 'mosqueroom', 'address', 'category', 'is_published']
-
-
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ['name']
-    list_filter = ['name']
-    search_fields = ['name']
+restaurantfields = ['name', 'bighall', 'certificate', 'mosqueroom', 'address', 'is_published']
+cafefields = ['name', 'certificate', 'mosqueroom', 'address', 'is_published']
+magazinefields = ['name', 'alcohol', 'productsCertificate', 'worktime', 'certificate', 'mosqueroom', 'address', 'is_published']
+fastfoodfields = ['name', 'worktime', 'certificate', 'mosqueroom', 'address', 'is_published']
 
 
 class CafeAdmin(admin.ModelAdmin):
@@ -38,7 +32,6 @@ class FastFoodAdmin(admin.ModelAdmin):
     search_fields = fastfoodfields
 
 
-admin.site.register(Category, CategoryAdmin)
 admin.site.register(Cafe, CafeAdmin)
 admin.site.register(Restaurant, RestaurantAdmin)
 admin.site.register(Magazine, MagazineAdmin)
