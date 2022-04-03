@@ -25,8 +25,8 @@ class Cafe(models.Model):
     images = models.ImageField(verbose_name="Фотографии")
     longitude = models.DecimalField(verbose_name='Долгота', decimal_places=100, max_digits=1000)
     latitude = models.DecimalField(verbose_name='Широта', decimal_places=100, max_digits=1000)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
-    is_published = models.BooleanField(default=False, verbose_name='активном состоянии')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', related_name='categorycafe')
+    is_published = models.BooleanField(default=False, verbose_name='активировать')
 
     def __str__(self):
         return self.name
@@ -46,8 +46,8 @@ class Restaurant(models.Model):
     images = models.ImageField(verbose_name="Фотографии", upload_to=None)
     longitude = models.DecimalField(verbose_name='Долгота', decimal_places=100, max_digits=1000)
     latitude = models.DecimalField(verbose_name='Широта', decimal_places=100, max_digits=1000)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
-    is_published = models.BooleanField(default=False)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', related_name='categoryrestarant')
+    is_published = models.BooleanField(default=False, verbose_name='активировать')
 
     def __str__(self):
         return self.name
@@ -59,7 +59,7 @@ class Magazine(models.Model):
         verbose_name_plural = "Магазины"
 
     name = models.CharField(verbose_name="Название магазина/нипермаркета", max_length=300)
-    site = models.CharField(verbose_name="Сайт магазина/гипермаркета", max_length=100)
+    site = models.CharField(verbose_name="Сайт магазина/гипермаркета", max_length=100, blank=True)
     alcohol = models.BooleanField(verbose_name="Спритное продается да/нет", default=False)
     productsCertificate = models.BooleanField(verbose_name="Продукты халалные  есть/нет", default=True)
     worktime = models.CharField(verbose_name="Режим работы от/до", max_length=200)
@@ -70,8 +70,8 @@ class Magazine(models.Model):
     images = models.ImageField(verbose_name="Фотографии", upload_to=None)
     longitude = models.DecimalField(verbose_name='Долгота', decimal_places=100, max_digits=1000)
     latitude = models.DecimalField(verbose_name='Широта', decimal_places=100, max_digits=1000)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
-    is_published = models.BooleanField(default=False)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', related_name='categorymagazine')
+    is_published = models.BooleanField(default=False, verbose_name='активировать')
 
     def __str__(self):
         return self.name
@@ -84,7 +84,7 @@ class FastFood(models.Model):
 
     name = models.CharField(verbose_name="Название фаст-фуд", max_length=300)
     worktime = models.CharField(verbose_name="Режим работы от/до", max_length=200)
-    site = models.URLField(verbose_name="Сайт", max_length=100)
+    site = models.URLField(verbose_name="Сайт", max_length=100, blank=True)
     certificate = models.BooleanField(verbose_name="Сертификат халал присутствует", default=True)
     mosqueroom = models.BooleanField(verbose_name="Намазкана есть/нет", default=True)
     contacts = models.CharField(verbose_name="Контакты", max_length=16)
@@ -92,8 +92,8 @@ class FastFood(models.Model):
     images = models.ImageField(verbose_name="Фотографии", upload_to=None)
     longitude = models.DecimalField(verbose_name='Долгота', decimal_places=100, max_digits=1000)
     latitude = models.DecimalField(verbose_name='Широта', decimal_places=100, max_digits=1000)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
-    is_published = models.BooleanField(default=False)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', related_name='categoryfastfoot')
+    is_published = models.BooleanField(default=False, verbose_name='активировать')
 
     def __str__(self):
         return self.name

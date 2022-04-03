@@ -34,9 +34,9 @@ urlpatterns = [
 
     path('category-create', CategoryCreateView.as_view()),
     path('category-list', CategoryListView.as_view()),
-    path('category-detail', CategoryDetailView.as_view()),
-    path('category-update', CategoryUpdateView.as_view()),
-    path('category-delete', CategoryDeleteView.as_view()),
+    path('category-detail/<int:pk>/', CategoryDetailView.as_view()),
+    path('category-update/<int:pk>/', CategoryUpdateView.as_view()),
+    path('category-delete/<int:pk>/', CategoryDeleteView.as_view()),
 ]
 
 
