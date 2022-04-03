@@ -5,7 +5,7 @@ from .views import CafeCreateView, CafeListView, CafeDeleteView, CafeUpdateView,
     FastFoodDeleteView, FastFoodDetailView, FastFoodCreateView, FastFoodUpdateView, FastFoodListView,\
     CategoryCreateView, CategoryDeleteView, CategoryListView, CategoryUpdateView, CategoryDetailView
 
-
+#Bolot
 urlpatterns = [
     path('magazine-create/', MagazineCreateView.as_view()),
     path('magazine-list/', MagazinListView.as_view()),
