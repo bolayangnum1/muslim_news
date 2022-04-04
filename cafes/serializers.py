@@ -6,14 +6,14 @@ class CafesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Cafe
-        fields = ('name', 'certificate', 'mosqueroom', 'contacts', 'address', 'images', 'longitude', 'latitude', 'category')
+        fields = ('name', 'certificate', 'mosqueroom', 'contacts', 'address', 'images', 'longitude', 'latitude')
 
 
 class RestaurantSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Restaurant
-        fields = ('name', 'bighall', 'certificate', 'mosqueroom', 'contacts', 'address', 'images', 'longitude', 'latitude', 'category')
+        fields = ('name', 'bighall', 'certificate', 'mosqueroom', 'contacts', 'address', 'images', 'longitude', 'latitude')
 
 
 class MagazineSerializer(serializers.ModelSerializer):
