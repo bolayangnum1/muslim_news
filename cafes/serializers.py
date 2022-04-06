@@ -6,25 +6,25 @@ class CafesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Cafe
-        fields = ('name', 'certificate', 'mosqueroom', 'contacts', 'address', 'images', 'longitude', 'latitude')
+        fields = ('id', 'name', 'certificate', 'mosqueroom', 'contacts', 'address', 'images', 'longitude', 'latitude', 'is_published')
 
 
 class RestaurantSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Restaurant
-        fields = ('name', 'bighall', 'certificate', 'mosqueroom', 'contacts', 'address', 'images', 'longitude', 'latitude')
+        fields = ('id', 'name', 'bighall', 'certificate', 'mosqueroom', 'contacts', 'address', 'images', 'longitude', 'latitude', 'is_published')
 
 
 class MagazineSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Magazine
-        fields = '__all__'
+        fields = ('name', 'id', 'site', 'alcohol', 'productsCertificate', 'worktime', 'certificate', 'mosqueroom', 'contacts', 'address', 'images', 'longitude', 'latitude', 'is_published')
 
 
 class FastFoodSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = FastFood
-        fields = '__all__'
+        fields = ('name', 'id', 'worktime', 'site', 'certificate', 'mosqueroom', 'contacts', 'address', 'images', 'longitude', 'latitude', 'is_published')
