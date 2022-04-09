@@ -39,7 +39,7 @@ class Restaurant(models.Model):
     longitude = models.FloatField(verbose_name='Долгота', blank=True, null=True)
 
     is_published = models.BooleanField(
-        default=True,
+        default=False,
         verbose_name='Состаяние публикации')
 
     def __str__(self):
