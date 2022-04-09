@@ -82,3 +82,4 @@ class FastFood(models.Model):
 
     def __str__(self):
         return self.name
+    #11:39
