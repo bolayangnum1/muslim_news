@@ -11,7 +11,7 @@ class Cafe(models.Model):
     mosqueroom = models.BooleanField(verbose_name="Намазкана есть/нет", default=True)
     contacts = models.CharField(verbose_name="Контакты", max_length=16)
     address = models.CharField(verbose_name="Адресс", max_length=500)
-    images = models.ImageField(verbose_name="Фотографии")
+    images = models.ImageField(verbose_name="Фотографии", upload_to=None)
     latitude = models.FloatField(verbose_name='Широта', blank=True)
     longitude = models.FloatField(verbose_name='Долгота', blank=True)
     is_published = models.BooleanField(default=False, verbose_name='активировать')
