@@ -16,7 +16,7 @@ class Cafe(models.Model):
     longitude = models.FloatField(verbose_name='Долгота', blank=True, null=True)
 
     is_published = models.BooleanField(
-        default=True,
+        default=False,
         verbose_name='Состаяние публикации')
 
     def __str__(self):
@@ -65,7 +65,7 @@ class Magazine(models.Model):
     longitude = models.FloatField(verbose_name='Долгота', blank=True, null=True)
 
     is_published = models.BooleanField(
-        default=True,
+        default=False,
         verbose_name='Состаяние публикации')
 
     def __str__(self):
@@ -89,7 +89,7 @@ class FastFood(models.Model):
     longitude = models.FloatField(verbose_name='Долгота', blank=True, null=True)
 
     is_published = models.BooleanField(
-        default=True,
+        default=False,
         verbose_name='Состаяние публикации')
 
     def __str__(self):
