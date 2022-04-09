@@ -14,7 +14,10 @@ class Cafe(models.Model):
     images = models.ImageField(verbose_name="Фотографии", upload_to='media')
     latitude = models.FloatField(verbose_name='Широта', blank=True, null=True)
     longitude = models.FloatField(verbose_name='Долгота', blank=True, null=True)
-    is_published = models.BooleanField(default=False, verbose_name='активировать')
+
+    is_published = models.BooleanField(
+        default=True,
+        verbose_name='Состаяние публикации')
 
     def __str__(self):
         return self.name
@@ -34,7 +37,10 @@ class Restaurant(models.Model):
     images = models.ImageField(verbose_name="Фотографии", upload_to='media')
     latitude = models.FloatField(verbose_name='Широта', blank=True, null=True)
     longitude = models.FloatField(verbose_name='Долгота', blank=True, null=True)
-    is_published = models.BooleanField(default=False, verbose_name='активировать')
+
+    is_published = models.BooleanField(
+        default=True,
+        verbose_name='Состаяние публикации')
 
     def __str__(self):
         return self.name
@@ -57,7 +63,10 @@ class Magazine(models.Model):
     images = models.ImageField(verbose_name="Фотографии", upload_to='media')
     latitude = models.FloatField(verbose_name='Широта', blank=True, null=True)
     longitude = models.FloatField(verbose_name='Долгота', blank=True, null=True)
-    is_published = models.BooleanField(default=False, verbose_name='активировать')
+
+    is_published = models.BooleanField(
+        default=True,
+        verbose_name='Состаяние публикации')
 
     def __str__(self):
         return self.name
@@ -78,7 +87,10 @@ class FastFood(models.Model):
     images = models.ImageField(verbose_name="Фотографии", upload_to='media')
     latitude = models.FloatField(verbose_name='Широта', blank=True, null=True)
     longitude = models.FloatField(verbose_name='Долгота', blank=True, null=True)
-    is_published = models.BooleanField(default=False, verbose_name='активировать')
+
+    is_published = models.BooleanField(
+        default=True,
+        verbose_name='Состаяние публикации')
 
     def __str__(self):
         return self.name
