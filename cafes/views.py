@@ -9,7 +9,7 @@ class CafeCreateView(generics.CreateAPIView):
 
 
 class CafeListView(generics.ListAPIView):
-    queryset = Cafe.objects.all()
+    queryset = Cafe.objects.filter(is_published=True)
     serializer_class = CafesSerializer
 
 
@@ -39,7 +39,7 @@ class RestaurantDetailView(generics.RetrieveAPIView):
 
 
 class RestaurantListView(generics.ListAPIView):
-    queryset = Restaurant.objects.all()
+    queryset = Restaurant.objects.filter(is_published=True)
     serializer_class = RestaurantSerializer
 
 
@@ -59,7 +59,7 @@ class MagazineCreateView(generics.CreateAPIView):
 
 
 class MagazinListView(generics.ListAPIView):
-    queryset = Magazine.objects.all()
+    queryset = Magazine.objects.filter(is_published=True)
     serializer_class = MagazineSerializer
 
 
@@ -84,7 +84,7 @@ class FastFoodCreateView(generics.CreateAPIView):
 
 
 class FastFoodListView(generics.ListAPIView):
-    queryset = FastFood.objects.all()
+    queryset = FastFood.objects.filter(is_published=True)
     serializer_class = FastFoodSerializer
 
 
