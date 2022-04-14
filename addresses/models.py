@@ -24,7 +24,7 @@ class BaseAbstractCategory(models.Model):
 
     address = models.CharField(verbose_name="Адрес", max_length=500)
     contacts = models.CharField(verbose_name="Контакты", max_length=24)
-    images = models.ImageField(verbose_name="Фотографии", upload_to='media')
+    images = models.URLField(verbose_name="Фотографии")
     longitude = models.FloatField(verbose_name='Долгота', blank=True, null=True)
     latitude = models.FloatField(verbose_name='Широта', blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)

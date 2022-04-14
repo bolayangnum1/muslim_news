@@ -11,7 +11,7 @@ class Cafe(models.Model):
     mosqueroom = models.BooleanField(verbose_name="Намазкана есть/нет", default=True)
     contacts = models.CharField(verbose_name="Контакты", max_length=16)
     address = models.CharField(verbose_name="Адресс", max_length=500)
-    images = models.ImageField(verbose_name="Фотографии", upload_to='media')
+    images = models.URLField(verbose_name="Фотографии")
     latitude = models.FloatField(verbose_name='Широта', blank=True, null=True)
     longitude = models.FloatField(verbose_name='Долгота', blank=True, null=True)
 
@@ -34,7 +34,7 @@ class Restaurant(models.Model):
     mosqueroom = models.BooleanField(verbose_name="Намазкана есть/нет", default=True)
     contacts = models.CharField(verbose_name="Контакты", max_length=16)
     address = models.CharField(verbose_name="Адресс", max_length=500)
-    images = models.ImageField(verbose_name="Фотографии", upload_to='media')
+    images = models.URLField(verbose_name="Фотографии")
     latitude = models.FloatField(verbose_name='Широта', blank=True, null=True)
     longitude = models.FloatField(verbose_name='Долгота', blank=True, null=True)
 
@@ -60,7 +60,7 @@ class Magazine(models.Model):
     mosqueroom = models.BooleanField(verbose_name="Намазкана есть/нет", default=True)
     contacts = models.CharField(verbose_name="Контакты", max_length=16)
     address = models.CharField(verbose_name="Адресс", max_length=500)
-    images = models.ImageField(verbose_name="Фотографии", upload_to='media')
+    images = models.URLField(verbose_name="Фотографии")
     latitude = models.FloatField(verbose_name='Широта', blank=True, null=True)
     longitude = models.FloatField(verbose_name='Долгота', blank=True, null=True)
 
@@ -84,7 +84,7 @@ class FastFood(models.Model):
     mosqueroom = models.BooleanField(verbose_name="Намазкана есть/нет", default=True)
     contacts = models.CharField(verbose_name="Контакты", max_length=16)
     address = models.CharField(verbose_name="Адресс", max_length=500)
-    images = models.ImageField(verbose_name="Фотографии", upload_to='media')
+    images = models.URLField(verbose_name="Фотографии")
     latitude = models.FloatField(verbose_name='Широта', blank=True, null=True)
     longitude = models.FloatField(verbose_name='Долгота', blank=True, null=True)
 
