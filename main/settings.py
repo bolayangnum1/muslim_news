@@ -1,5 +1,7 @@
 import os
 from pathlib import Path
+
+import dj_database_url
 from decouple import config
 import django_heroku
 
@@ -133,13 +135,19 @@ USE_TZ = True
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+
+CORS_ORIGIN_ALLOW_ALL = True
+STATIC_URL = 'static/'
+
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-STATIC_ROOT = BASE_DIR / "staticfiles"
-STATIC_URL = '/static/'
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_heroku.settings(locals())
